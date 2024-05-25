@@ -66,7 +66,7 @@ label{
     width: 100%;
     
     font-weight: 500;
-    font-size: clmap(20px,1svw,40px);
+    font-size: clmap(14px,1svw,40px);
     margin-block: 10px;
 
     span{
@@ -93,7 +93,7 @@ label{
         border-radius: 0.8svw;
 
         min-height: clamp(50px,4svw,40svw);
-        min-width: clamp(200px,40svw,50svw);
+        min-width: clamp(300px,40svw,50svw);
         padding: 1svw;
         overflow-y: scroll;
         word-wrap: break-word;
@@ -114,13 +114,13 @@ label{
         border-radius: 0.8svw;
 
         min-height: clamp(50px,4svw,40svw);
-        min-width: clamp(200px,40svw,50svw);
+        min-width: clamp(300px,40svw,50svw);
         padding: 1svw;
         overflow-y: scroll;
         word-wrap: break-word;
         filter: drop-shadow(0 0 5px $white);
 
-        font-size: clamp(20px,1.8svw,2svw);
+        font-size: clamp(16px,1.8svw,2svw);
         cursor: default
     }
 
@@ -163,7 +163,7 @@ label{
         border-radius: 0.8svw;
 
         min-height: clamp(20px,1svw,40svw);
-        min-width: clamp(200px,40svw,50svw);
+        min-width: clamp(300px,40svw,50svw);
         padding: 1svw;
         overflow-y: scroll;
         word-wrap: break-word;
@@ -172,21 +172,6 @@ label{
         }
     }
 }
-
-
-
-@media (max-width:500px){
-    #main{
-        width: calc(100svw - 40px);
-    }
-    .btn-box{
-        @include flex(center,center,column,wrap,25px)
-    }
-    .btn{
-        min-width:200px;
-    }
-}
-
 footer{
     position: absolute;
     bottom: 0;
@@ -242,5 +227,43 @@ footer{
     }
     .author{
         transition: all ease 600ms;
+    }
+
+}
+
+
+
+@media (max-width:500px){
+    #main{
+        width: calc(100svw - 40px);
+    }
+    .btn-box{
+        @include flex(center,center,column,wrap,25px)
+    }
+    .btn{
+        min-width:200px;
+    }
+    #input{
+        width: 100%;
+    }
+    footer{
+        .links{
+            width: 100%;
+            .icon{
+                height: 14px;
+                aspect-ratio: 1;
+            }
+        }
+        .name{
+            width: 100%;
+            text-align: center;
+            margin-top: 8px;
+        }
+        .author{
+            width: 100%;
+            font-size: 15px;
+
+
+        }
     }
 }

@@ -104,7 +104,7 @@ toEncryptBtn.onclick = e =>{
 function handleInterval() {
     /* set random opacity to each grid-tile & assign random letter to each grid-tile */
     tiles.forEach((e)=>{
-        e.style.setProperty("--opacity",(Math.random()* 0.4).toPrecision(1)/3)
+        e.style.setProperty("--opacity",(Math.random()* 0.4).toPrecision(1)/2)
         e.innerHTML = randomChar(chars)
     })
 }
