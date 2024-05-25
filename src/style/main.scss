@@ -58,7 +58,8 @@
 
 }
 h1{
-    text-transform: uppercase
+    text-transform: uppercase;
+    cursor: default;
 }
 
 label{
@@ -119,7 +120,8 @@ label{
         word-wrap: break-word;
         filter: drop-shadow(0 0 10px $black);
 
-        font-size: clamp(20px,1.8svw,2svw)
+        font-size: clamp(20px,1.8svw,2svw);
+        cursor: default
     }
 
 }
@@ -139,6 +141,7 @@ label{
         border-radius: 0.5svw;
         width: 40%;
         background: rgba($black,0.4);
+        cursor: pointer;
         @include trnasition(all,500ms,ease);
         &:hover{
             border: 0.1svw solid $green;
@@ -181,5 +184,63 @@ label{
     }
     .btn{
         min-width:200px;
+    }
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+
+    width: calc(100%);
+    padding: 5px;
+    border-top: 0.1svw rgba($green,0.5) solid;
+    background: rgba($black,0.6);
+    @include flex(flex-start,center,row,wrap);
+    .links{
+        @include flex(space-evenly,center,row,wrap,2svw);
+        width: 20%;
+    }
+    a{
+        all: unset;
+        transition: all ease 500ms;
+        cursor: pointer;
+        &:hover{
+            .icon{
+                stroke: var(--color);
+            }
+        }
+        padding-top: 2px;
+    }
+    .icon{
+        transition: all ease 600ms;
+        min-height: 24px;
+        height: 2svw;
+        aspect-ratio: 1;
+        stroke-width: 1;
+        stroke: rgba($white,0.5);
+        filter: drop-shadow(0 0 8px var(--color));
+    }
+    .name{
+        @include flex(flex-end,center,row,wrap);
+        width: calc(100% - 21%);
+        text-align: right;
+        font-family: $mono;
+        font-weight: 200;
+        font-size: clmap(20px,2svw,2svw);
+        text-transform: uppercase;
+
+        color: rgba($white,0.5);
+
+        transition: all ease 300ms;
+    }
+    .author:hover{
+        color: rgba($green,1);
+        filter: drop-shadow(0 0 8px $green);
+    }
+    .author{
+        transition: all ease 600ms;
     }
 }

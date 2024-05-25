@@ -4,7 +4,7 @@ import { chars, randomChar } from './src/random';
 
 import { ALPHABETS, NUMBERS, createENC_KEY, encryption, mergeUniqueStrings, decryption, generateVMatrix } from './src/vengere';
 
-
+import './src/createIcons'
 /* #################### GRID ########################## */
 
 // get grid parent
@@ -53,7 +53,7 @@ document.body.addEventListener("resize",()=>{
     }
 })
 
-/* #########################3 MAIN LOGIC ################## */
+/* ######################### MAIN LOGIC ################## */
 let KEYWORD;
 let TEXT;
 toDecryptBtn.onclick = e =>{
@@ -113,3 +113,9 @@ function isAlphanumeric(str) {
     /********** CHECK STRING IS ALPHA-NUMERIC ***********/
     return /^[a-zA-Z0-9]+$/.test(str);
 }
+
+
+const links = document.querySelectorAll(".link-item")
+links.forEach((e)=>{
+   e.style.setProperty("--color",e.dataset.color)
+})
