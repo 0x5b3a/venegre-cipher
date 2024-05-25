@@ -109,8 +109,8 @@ label{
     color: $white;
     #showBox{
         all: unset;
-        background: rgba($black,0.5);
-        border: 0.1svw solid rgba($black,0.5);
+        background: rgba($white,0.1);
+        border: 0.1svw solid rgba($white,0.5);
         border-radius: 0.8svw;
 
         min-height: clamp(50px,4svw,40svw);
@@ -118,7 +118,7 @@ label{
         padding: 1svw;
         overflow-y: scroll;
         word-wrap: break-word;
-        filter: drop-shadow(0 0 10px $black);
+        filter: drop-shadow(0 0 5px $white);
 
         font-size: clamp(20px,1.8svw,2svw);
         cursor: default
