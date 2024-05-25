@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&family=Sora:wght@100..800&display=swap');
+
+$black : hsl(0 ,0% ,5%);
+$white: white;
+$red : hsl(0, 96%, 60%);
+$yellow : hsl(60, 85%, 60%);
+$blue : hsl(210, 90%, 60%);
+$green : hsl(120, 70%, 60%);
+
+// fonts
+$sans: "Sora",sans-serif;
+$mono : "Martian Mono",spacemono;
+
+
+@mixin flex($justify:center,$align:center,$dicrection:row,$wrap:wrap,$gap:0.5svw){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $dicrection;
+    flex-wrap: $wrap;
+    gap: $gap;
+}
+
+@mixin trnasition($which:all,$duration:500ms,$ease:ease){
+    transition: $which $duration $ease;
+}

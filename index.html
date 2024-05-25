@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vigenere Cipher</title>
+    <link rel="stylesheet" href="style.scss">
+  </head>
+  <body>
+    <div id="app">
+      <div id="grid"></div>
+      <div class="overlay"></div>
+        <form id="main">
+        <!-- heading -->
+        <h1>Venegre Cipher</h1>
+        
+        <section id="keywordBox">
+          <label for="keyword">Keyword <span> *</span></label>
+          <input type="text" name="keyword" id="keyword" required placeholder="Hello">
+        </section>
+        <!-- text input -->
+        <section class="inputTxt">
+          <label for="input">Enter Text: <span>only alpha-numeric *</span></label>
+          <textarea name="input" id="input" required placeholder="text to encrypt / decrypt"></textarea>
+        </section>
+
+        <!-- text showK -->
+        <section class="showTxt">
+          <label id="dynamicLabel"></label>
+          <div id="showBox" >Encrypted / Decrypted text</div>
+        </section>
+
+        <!-- buttons -->
+        <section class="btn-box">
+          <button id="encBtn" class="btn">Encrypt</button>
+          <button id="decBtn" class="btn">Decrypt</button>
+        </section>
+        </form>
+    </div>
+
+    <!-- <script src="src/ceaser.js"></script> -->
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

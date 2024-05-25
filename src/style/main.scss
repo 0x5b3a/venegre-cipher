@@ -1,0 +1,185 @@
+@import './var';
+
+#app{
+    position: relative;
+}
+
+#grid{
+    position: relative;
+    min-height: 100svh;
+    
+    min-width: 100svw;
+    
+    display: grid;
+    grid-template-columns: repeat(var(--cols),1fr);
+    grid-template-rows: repeat(var(--rows),1fr);
+    position: relative;
+    gap: 0.5px;
+    background: rgba($green,0.05);    
+
+}
+.tile{
+    $alpha:var(--opacity);
+    @include flex(center,center);
+    background: $black;
+    color: rgba($green,$alpha);
+
+    font-size: clamp(16px,0.8svw,24px);
+    font-family: $mono;
+    transition: all ease 500ms;
+}
+
+.overlay{
+    position: absolute;
+    height: 100svh;
+    width: 100svw;
+    top: 0;
+    left: 0;
+}
+#main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%,-50%);
+
+    border: 0.1svw solid rgba($white,0.2);
+    border-radius: 0.8svw;
+
+    background: rgba($white,0.08);
+
+    padding: 1svw;
+
+    text-transform: uppercase;
+
+    
+    @include flex(center,center,column);
+    z-index: 99;
+
+}
+h1{
+    text-transform: uppercase
+}
+
+label{
+    width: 100%;
+    
+    font-weight: 500;
+    font-size: clmap(20px,1svw,40px);
+    margin-block: 10px;
+
+    span{
+        color: $red;
+        font-weight: 600;
+        padding-left: 5px;
+    }
+}
+
+.inputTxt{
+    @include flex(center,center,column);
+    color: $white;
+    
+    label{
+        filter: unset;
+        span{
+            filter: unset;
+        }
+    }
+    #input{
+        all: unset;
+        background: rgba($green,0.3);
+        border: 0.1svw solid rgba($green,0.5);
+        border-radius: 0.8svw;
+
+        min-height: clamp(50px,4svw,40svw);
+        min-width: clamp(200px,40svw,50svw);
+        padding: 1svw;
+        overflow-y: scroll;
+        word-wrap: break-word;
+        filter: drop-shadow(0 0 10px $green);
+        &:active,&:focus{
+            border: 0.15svw solid rgba($white,0.5);
+        }
+    }
+}
+
+.showTxt{
+    @include flex(center,center,column);
+    color: $white;
+    #showBox{
+        all: unset;
+        background: rgba($black,0.5);
+        border: 0.1svw solid rgba($black,0.5);
+        border-radius: 0.8svw;
+
+        min-height: clamp(50px,4svw,40svw);
+        min-width: clamp(200px,40svw,50svw);
+        padding: 1svw;
+        overflow-y: scroll;
+        word-wrap: break-word;
+        filter: drop-shadow(0 0 10px $black);
+
+        font-size: clamp(20px,1.8svw,2svw)
+    }
+
+}
+
+.btn-box{
+    @include flex(space-evenly,center,row,wrap);
+    width: 80%;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 15px;
+
+    .btn{
+        all: unset;
+        height: clamp(24px,2.5svw,5svw);
+        border: 0.1svw solid rgba($white,0.5);
+        border-radius: 0.5svw;
+        width: 40%;
+        background: rgba($black,0.4);
+        @include trnasition(all,500ms,ease);
+        &:hover{
+            border: 0.1svw solid $green;
+            color: $green;
+            background: rgba($green,0.1);
+        }
+    }
+}
+
+#keywordBox{
+    @include flex(center,center,column);
+    color: $white;
+
+    input{
+        all: unset;
+        filter: drop-shadow(0 0 5px $white);
+        background: rgba($white,0.2);
+        border: 0.1svw solid rgba($white,0.5);
+        border-radius: 0.8svw;
+
+        min-height: clamp(20px,1svw,40svw);
+        min-width: clamp(200px,40svw,50svw);
+        padding: 1svw;
+        overflow-y: scroll;
+        word-wrap: break-word;
+        &:active,&:focus{
+            border: 0.15svw solid rgba($white,0.5);
+        }
+    }
+}
+
+
+
+@media (max-width:500px){
+    #main{
+        width: calc(100svw - 40px);
+    }
+    .btn-box{
+        @include flex(center,center,column,wrap,25px)
+    }
+    .btn{
+        min-width:200px;
+    }
+}
